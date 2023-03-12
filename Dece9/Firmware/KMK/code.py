@@ -44,6 +44,6 @@ keyboard.keymap = [
         KC.NO, KC.NO, KC.NO,
     ],
 ]
-1234567899
+
 if __name__ == '__main__':
     keyboard.go()
