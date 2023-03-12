@@ -35,7 +35,7 @@ keyboard.keymap = [
     [
         KC.KP_1, KC.KP_2, KC.KP_3,
         KC.KP_4, KC.KP_5, KC.KP_6,
-        LAYER_TAP, KC.KP1_8, KC.KP_9
+        LAYER_TAP, KC.KP_8, KC.KP_9
     ],
     # Function Layer
     [
