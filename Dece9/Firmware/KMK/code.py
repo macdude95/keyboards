@@ -26,16 +26,16 @@ keyboard.extensions.append(MediaKeys())
 keyboard.modules.append(Layers())
 
 # any tap longer than 250ms will be interpreted as a hold
-LAYER_TAP = KC.LT(1, KC.KP_7, prefer_hold=True,
+LAYER_TAP = KC.LT(1, KC.N7, prefer_hold=True,
                   tap_interrupted=False, tap_time=250)
 
 # Keymap
 keyboard.keymap = [
     # Base Layer
     [
-        KC.KP_1, KC.KP_2, KC.KP_3,
-        KC.KP_4, KC.KP_5, KC.KP_6,
-        LAYER_TAP, KC.KP1_8, KC.KP_9
+        KC.N1, KC.N2, KC.N3,
+        KC.N4, KC.N5, KC.N6,
+        LAYER_TAP, KC.N8, KC.N9
     ],
     # Function Layer
     [
@@ -44,6 +44,6 @@ keyboard.keymap = [
         KC.NO, KC.NO, KC.NO,
     ],
 ]
-1234567899
+
 if __name__ == '__main__':
     keyboard.go()
