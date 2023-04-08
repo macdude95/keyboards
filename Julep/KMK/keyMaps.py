@@ -12,11 +12,11 @@ def convertKCtoChar(keycode):
 
 
 def createLayerTap(keycode, layer):
-    return KC.LT(layer, keycode, prefer_hold=False, tap_interrupted=False, tap_time=200)
+    return KC.LT(layer, keycode, prefer_hold=True, tap_interrupted=True, tap_time=200)
 
 
 def createModTap(tap, hold):
-    return KC.MT(tap, hold, prefer_hold=False, tap_interrupted=False, tap_time=200)
+    return KC.MT(tap, hold, prefer_hold=True, tap_interrupted=True, tap_time=200)
 
 
 def getKeymap():
