@@ -155,7 +155,7 @@ def getKeymap():
     TABALT = createModTap(KC.TAB, KC.RALT)
     ENTCTRL = createModTap(KC.ENT, KC.RCTRL)
     ALAYER = createLayerTap(KC.A, 2)
-    XLAYER = createLayerTap(KC.X, 3)
+    QLAYER = createLayerTap(KC.LCTRL, 3)
     SCLAYER = createLayerTap(KC.SCLN, 4)
 
     MACSCREENSHOT = KC.LGUI(KC.LSFT(KC.N4))
@@ -165,7 +165,7 @@ def getKeymap():
         BSPCCMND: standardKCStrings[KC.BSPC],
         MACSCREENSHOT: "┼",
         ALAYER: standardKCStrings[KC.A],
-        XLAYER: standardKCStrings[KC.X],
+        QLAYER: standardKCStrings[KC.Q],
         SCLAYER: standardKCStrings[KC.SCLN],
         SPCALT: standardKCStrings[KC.SPC],
         TABALT: standardKCStrings[KC.TAB],
@@ -179,29 +179,29 @@ def getKeymap():
     return [
         # Base Layer 1 - Querty
         [
-            KC.Q,       KC.W,       KC.E,       KC.R,       KC.T,       KC.Y,       KC.U,       KC.I,       KC.O,   KC.P,
+            QLAYER,     KC.W,       KC.E,       KC.R,       KC.T,       KC.Y,       KC.U,       KC.I,       KC.O,   KC.P,
             ALAYER,     KC.S,       KC.D,       KC.F,       KC.G,       KC.H,       KC.J,       KC.K,       KC.L,   SCLAYER,
-            ZSHFT,      XLAYER,     KC.C,       KC.V,       KC.B,       KC.N,       KC.M,       KC.COMM,    KC.DOT, SLSHSHFT,
-            KC.NO,      KC.NO,      KC.LCTRL,   SPCALT,     BSPCCMND,   KC.RGUI,    TABALT,     ENTCTRL,     KC.NO,  KC.NO   
+            ZSHFT,      KC.X,       KC.C,       KC.V,       KC.B,       KC.N,       KC.M,       KC.COMM,    KC.DOT, SLSHSHFT,
+            KC.NO,      KC.NO,      KC.LCTRL,   SPCALT,     BSPCCMND,   KC.RGUI,    TABALT,     ENTCTRL,    KC.NO,  KC.NO   
         ],
         # Base Layer 2 - Colemak DH - Currently not used by code. This layer is essentially ignores
         [
-            KC.TRNS,    KC.TRNS,    KC.F,       KC.P,       KC.B,       KC.J,       KC.L,       KC.U,   KC.Y,   KC.SCLN,
-            KC.TRNS,    KC.R,       KC.S,       KC.T,       KC.TRNS,    KC.M,       KC.N,       KC.E,   KC.I,   KC.O,
-            KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.D,       KC.V,       KC.K,       KC.H,       KC.TRNS,KC.TRNS,KC.TRNS,
-            KC.NO,      KC.NO,      KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,KC.NO,  KC.NO
+            KC.TRNS,    KC.TRNS,    KC.F,       KC.P,       KC.B,       KC.J,       KC.L,       KC.U,       KC.Y,       KC.SCLN,
+            KC.TRNS,    KC.R,       KC.S,       KC.T,       KC.TRNS,    KC.M,       KC.N,       KC.E,       KC.I,       KC.O,
+            KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.D,       KC.V,       KC.K,       KC.H,       KC.TRNS,    KC.TRNS,    KC.TRNS,
+            KC.NO,      KC.NO,      KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.NO,      KC.NO
         ],
         # Symbol Layer
         [
-            KC.EXLM,    KC.AT,      KC.HASH,    KC.DLR,     KC.PERC,    KC.CIRC,    KC.AMPR,    KC.ASTR,    KC.LPRN,      KC.RPRN,
+            KC.EXLM,    KC.AT,      KC.HASH,    KC.DLR,     KC.PERC,    KC.CIRC,    KC.AMPR,    KC.ASTR,    KC.LPRN,    KC.RPRN,
             KC.NO,      KC.UNDS,    KC.PIPE,    KC.GRV,     KC.QUOT,    KC.DQT,     KC.NO,      KC.NO,      KC.LBRC,    KC.RBRC,
-            KC.NO,      KC.NO,      KC.NO,      KC.TILDE,   KC.NO,      KC.NO,      KC.NO,      KC.NO,      KC.LCBR,    KC.RCBR,
+            KC.NO,      KC.NO,      KC.NO,      KC.TILDE,   KC.NO,      KC.NO,      KC.LABK,    KC.RABK,    KC.LCBR,    KC.RCBR,
             KC.NO,      KC.NO,      KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.NO,      KC.NO
         ],
         # Number/Arrow Layer
         [
-            KC.NO,      KC.NO,      KC.NO,      KC.UP,      KC.NO,      KC.PLUS,    KC.N7,      KC.N8,      KC.N9,  KC.ASTR,
-            KC.NO,      KC.NO,      KC.LEFT,    KC.DOWN,    KC.RIGHT,   KC.MINS,    KC.N4,      KC.N5,      KC.N6,  KC.BSLS,
+            KC.NO,      KC.NO,      KC.UP,      KC.NO,      KC.NO,      KC.PLUS,    KC.N7,      KC.N8,      KC.N9,  KC.ASTR,
+            KC.NO,      KC.LEFT,    KC.DOWN,    KC.RIGHT,   KC.NO,      KC.MINS,    KC.N4,      KC.N5,      KC.N6,  KC.BSLS,
             KC.NO,      KC.NO,      KC.NO,      KC.NO,      KC.NO,      KC.N0,      KC.N1,      KC.N2,      KC.N3,  KC.EQL,
             KC.NO,      KC.NO,      KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.NO,  KC.NO
         ],
