@@ -5,6 +5,8 @@ import board
 import oled
 from kmk.extensions.media_keys import MediaKeys
 from kmk.modules.modtap import ModTap
+from kmk.modules.tapdance import TapDance
+
 import keyMaps
 
 print("Starting")
@@ -31,6 +33,9 @@ def setupKMKKeyboard():
     k.modules.append(Layers())
     k.extensions.append(MediaKeys())
     k.modules.append(ModTap())
+    tapdance = TapDance()
+    tapdance.tap_time = 750
+    k.modules.append(tapdance)
 
     k.keymap = keyMaps.getKeymap()
     return k

@@ -155,8 +155,11 @@ def getKeymap():
     TABALT = createModTap(KC.TAB, KC.RALT)
     ENTCTRL = createModTap(KC.ENT, KC.RCTRL)
     ALAYER = createLayerTap(KC.A, 2)
-    QLAYER = createLayerTap(KC.LCTRL, 3)
+    QLAYER = createLayerTap(KC.Q, 3)
+    PLAYER = createLayerTap(KC.P, 3)
     SCLAYER = createLayerTap(KC.SCLN, 4)
+    RGUIEMOJI = KC.TD(KC.RGUI, KC.RCTRL(KC.RGUI(KC.SPC)))
+    CTRLWINMV = KC.TD(KC.LCTRL, KC.LCTRL(KC.LALT))
 
     MACSCREENSHOT = KC.LGUI(KC.LSFT(KC.N4))
     customKCStrings = {
@@ -166,10 +169,13 @@ def getKeymap():
         MACSCREENSHOT: "┼",
         ALAYER: standardKCStrings[KC.A],
         QLAYER: standardKCStrings[KC.Q],
+        PLAYER: standardKCStrings[KC.P],
         SCLAYER: standardKCStrings[KC.SCLN],
         SPCALT: standardKCStrings[KC.SPC],
         TABALT: standardKCStrings[KC.TAB],
         ENTCTRL: standardKCStrings[KC.ENT],
+        RGUIEMOJI: standardKCStrings[KC.RGUI],
+        CTRLWINMV: standardKCStrings[KC.LCTRL],
     }
 
     kcToCharDict.update(customKCStrings)
@@ -179,12 +185,12 @@ def getKeymap():
     return [
         # Base Layer 1 - Querty
         [
-            QLAYER,     KC.W,       KC.E,       KC.R,       KC.T,       KC.Y,       KC.U,       KC.I,       KC.O,   KC.P,
+            QLAYER,     KC.W,       KC.E,       KC.R,       KC.T,       KC.Y,       KC.U,       KC.I,       KC.O,   PLAYER,
             ALAYER,     KC.S,       KC.D,       KC.F,       KC.G,       KC.H,       KC.J,       KC.K,       KC.L,   SCLAYER,
             ZSHFT,      KC.X,       KC.C,       KC.V,       KC.B,       KC.N,       KC.M,       KC.COMM,    KC.DOT, SLSHSHFT,
-            KC.NO,      KC.NO,      KC.LCTRL,   SPCALT,     BSPCCMND,   KC.RGUI,    TABALT,     ENTCTRL,    KC.NO,  KC.NO   
+            KC.NO,      KC.NO,      CTRLWINMV,  SPCALT,     BSPCCMND,   RGUIEMOJI,  TABALT,     ENTCTRL,    KC.NO,  KC.NO   
         ],
-        # Base Layer 2 - Colemak DH - Currently not used by code. This layer is essentially ignores
+        # Base Layer 2 - Colemak DH - Currently not used by code. This layer is essentially ignored
         [
             KC.TRNS,    KC.TRNS,    KC.F,       KC.P,       KC.B,       KC.J,       KC.L,       KC.U,       KC.Y,       KC.SCLN,
             KC.TRNS,    KC.R,       KC.S,       KC.T,       KC.TRNS,    KC.M,       KC.N,       KC.E,       KC.I,       KC.O,

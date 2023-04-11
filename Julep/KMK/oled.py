@@ -17,7 +17,7 @@ class OLEDContext:
 
         # Clear OLED and prep a group to add to
         displayio.release_displays()
-        i2c = busio.I2C(scl=board.GP27, sda=board.GP26)
+        i2c = busio.I2C(scl=board.GP27, sda=board.GP26, frequency=1000000)
         display_bus = displayio.I2CDisplay(i2c, device_address=0x3C)
         display = adafruit_displayio_ssd1306.SSD1306(display_bus, width=128, height=64)
         self.splash = displayio.Group()
